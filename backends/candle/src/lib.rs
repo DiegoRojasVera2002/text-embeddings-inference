@@ -74,6 +74,8 @@ impl<'de> Deserialize<'de> for BertConfigWrapper {
 
         if name_or_path == "jinaai/jina-bert-implementation"
             || auto_config.contains("jinaai/jina-bert-implementation")
+            || name_or_path.starts_with("jinaai/jina-bert-v2-qk-devlin-norm")
+            || auto_config.contains("jinaai/jina-bert-v2-qk-devlin-norm")
         {
             // https://huggingface.co/jinaai/jina-bert-implementation
             Ok(Self::JinaBert(config))
